@@ -1,0 +1,81 @@
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	background: url('../img/textura.png'), #c8c8c8;
+	background-repeat: repeat;
+	font-family: 'Open Sans', sans-serif;
+	
+}
+
+.page-link, .link{
+
+	color: #01a39d;
+}
+
+.title-logo1 {
+	color: 	#2F3F3B;
+	font-size: 40px;
+}
+.title-logo {
+	color: 	#2F3F3B;
+	font-size: 90px;
+}
+span{
+	color: #01a39d;
+}
+
+
+
+.btn:hover{
+	color: #0275d8;
+}
+
+.search-input, btn{
+	background: #f2f2f2;
+	border: none;
+	font-weight: 400;
+	padding: 10px;
+}
+
+.search-input{
+	width: 80%;
+}
+
+.search-input:active, .search-input:hover{
+	border: none;
+}
+
+.nav{
+	padding: 0;
+}
+.c-1,.c-2,.c-3{
+	display: inline-block;
+	padding: 10px;
+	color: #fff;
+	border: none;
+}
+button{
+	border: none;
+}
+.c-1:active,.c-2:active,.c-3:active,
+.c-1:hover,.c-2:hover,.c-3:hover{
+	color: #fff;
+	opacity: .8;
+	border: none;
+}
+.c-3{background: #465D57;}
+.c-1{background: #01a39d;}
+.c-2{background: #041C26;}
+/*
+.c-3:hover{background: #103c77;}
+.c-1:hover{background: #79a4b9;}
+.c-2:hover{background: #900833;}*/
+
+
+.title{
+	color: #01a39d;
+}

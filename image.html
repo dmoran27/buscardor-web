@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="views/css/style.css">
+    <link rel="stylesheet" href="views/css/bootstrap.min.css">
+    <script type="text/javascript" src="views/js/tether.min.js"></script>
+    <script type="text/javascript" src="views/js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="views/js/function.js"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="views/css/fontello.css">
+    <link rel="shorcut icon" href="views/img/penguin.png" sizes="16x16" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <title>Buscador Web</title>
+
+    
+</head>
+
+<body>
+        <!--NAVBAR-->
+        <header>
+                <div class="container mt-3">
+                    
+                    <!--search-->
+                    <div class="row bg-white shadow p-0 align-items-stretch d-flex flex-wrap justify-content-md-between rounded-top">
+
+                        <!--logo-->
+                        <div class="col-lg-3 search-logo d-flex justify-content-center justify-content-lg-start mb-lg-0 mb-2 align-items-center">
+                            <img class=" img-fluid float-left " src="views/img/penguin (4).png"  width= "64"  alt="">
+                            <h1 class="title-logo1">Cod<span>Go</span>!</h1>
+                            
+                        </div>
+                        
+                        <!--input-->
+                        <div class=" search-text pr-0 col-lg-9 d-flex p-2 justify-content-lg-end mr-0 ">
+                            <input type="text" name="search-input" id="search-input" placeholder="Ingrese el dato de la busqueda" class="border-left shadow-sm w-100 search-input bg-light" >
+                        </div> 
+                    </div>
+        
+                    <!--BUTTONS-->
+                    <div class="row justify-content-end justify-content-lg-end btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="col-md-auto col-12 nav d-flex justify-content-center flex-wrap flex-md-nowrap justify-content-lg-end pr-0 btn-group" role="group" aria-label="First group">
+                                <button type="button" class= "c-1 d-flex align-items-center border-0 rounded-left w-100 shadow" id="busquedaInformatica">
+                                    <div class=" d-flex flex-md-column text-center">
+                                        <p class="mb-0 ">Busqueda Informatica</p>
+                                        <i class="icon icon-search"></i>
+                                    </div>
+                                </button>
+                                <button type="button" class= "c-2 d-flex align-items-center border-0 w-100 shadow" id="busquedaNormal">
+                                    <div class=" d-flex flex-md-column text-center">
+                                        <p class="mb-0 ">Busqueda Normal</p>
+                                        <i class="icon icon-search"></i>
+                                    </div>
+                                </button>
+                                <button type="button" class= "c-3 d-flex align-items-center border-0 w-100 shadow" id="definicion">
+                                    <div class=" d-flex flex-md-column text-center">
+                                        <p class="mb-0 ">Definicion</p>
+                                        <i class="icon icon-tags"></i>
+                                    </div>
+                                </button>
+                                <button type="button" class= "c-1 d-flex align-items-center border-0  w-100 shadow" id="pdf">
+                                    <div class=" d-flex flex-md-column text-center">
+                                        <p class="mb-0 px-3">PDF</p>
+                                        <i class="icon icon-list-bullet"></i>
+                                    </div>
+                                </button>
+                                <button type="button" class= "c-2 d-flex align-items-center border-0 w-100 shadow" id="img">
+                                    <div class=" d-flex flex-md-column text-center">
+                                        <p class="mb-0 ">Imagenes</p>
+                                        <i class="icon icon-picture"></i>
+                                    </div>
+                                </button>
+                                <button type="button" class= "c-3 d-flex align-items-center rounded-right border-0 w-100 shadow" id="video">
+                                    <div class=" d-flex flex-md-column text-center">
+                                        <p class="mb-0 ">Videos</p>
+                                        <i class="icon icon-youtube-play"></i>
+                                    </div>
+                                </button>
+                        </div>
+                                
+                    </div>
+                </div>
+            </header>
+    <!--CONTENT -->
+    <main class="container main px-0 mt-3">
+
+
+<!--image -->
+<div class="row " id="acordeon">
+    <div class="card-columns">
+
+
+        {{range $index, $element := .Items}}
+        {{range $i, $e := .Pagemap.CseImage}}
+
+        <div class="card  m-1" id="Heading{{$index}}{{$i}}">
+            <div class="contenedor-imagen pt-3">
+                <a href="#" data-toggle="modal" data-target="#modal">
+                    <img src={{.Src}} class="img card-img-top" alt={{$element.Title}}>
+                </a>
+            </div>
+            <div class="link d-flex justify-content-end pb-3">
+                <a href="#p{{$index}}{{$i}}" data-toggle="collapse" aria-expanded="true" aria-controls="p{{$index}}{{$i}}"
+                    class="card-link btn"><i class="icon icon-list-bullet"></i></a>
+                <a href="#" class="btn card-link favoritos">
+                    <i class=" icon icon-star" id={{$element.Link}}></i>
+                </a>
+            </div>
+            <div class="collapse m-auto" style="max-width: 22em;" aria-labelledby="Heading{{$index}}{{$i}}" id="p{{$index}}{{$i}}" data-parent="#acordeon">
+                <div class="card  p-3 ">
+                  </a><h5 class="card-text text-info"> Titulo: </h5> 
+                        <p class="card-text text-muted"> {{$element.Title}} </p>                    
+                      <h5 class="card-text text-info"> Url:</h5> <a href={{$element.Link}}>
+                    <p class="card-text text-muted"> {{$element.Link}} </p></a>
+                </div>
+            </div>
+
+        </div>
+
+        {{end}}
+        {{end}}
+    </div>
+</div>
+
+<div class="modal fade" id="modal">
+    <div class="modal-dialog d-flex w-100 h-100 justify-content-center align-items-center">
+        <div class="modal-content">
+            <img src="" id="imagen-modal" class="imagen-modal" alt="">
+        </div>
+    </div>
+</div>
+
+                
+    </main>
+
+
+    <!--Pagination -->
+    <section class="pagination container pr-0 mb-5">
+        <div class="row mt-3 mb-5">
+            <div class="col">
+                <nav>
+                    <ul class="pagination shadow d-flex ">
+                        
+                        <li class="page-item disabled"><a a href="#" class="page-link pag text-muted" id="Anterior" aria-hidden="true">&laquo; Anterior</a></li>                        
+                        <li class="page-item "><a href="#" class="page-link pag" id="1">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link pag" id="11">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link pag" id="21">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link pag" id="31">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link pag" id="41">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link pag" id="51">6</a></li>
+                        <li class="page-item"><a href="#" class="page-link pag" id=Siguiente>Siguiente &raquo;</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer class=" footer container-fluid bg-light text-muted mt-5 py-3 ">
+            <div class="row d-flex">
+
+                <!--LOGO -->
+                <div class="col-lg-4 pl-0 justify-content-center order-lg-2 col-12">
+                    <h4 class="title-logo1 text-center">Cod<span>Go</span>! - <span>20</span>18</h4>
+                </div>
+                
+                <!--SESION -->
+                <div class="col-lg-4 order-lg-1 col-sm-6 d-flex justify-content-center flex-wrap flex-sm-nowrap justify-content-lg-start mt-2 mt-lg-0">
+                    <a href="views/modules/login.html" class="btn w-100 btn-outline-secondary p-3 border"> Iniciar Sesion</a>
+                    <a href="views/modules/register.html"" class="btn w-100 w-sm-auto btn-outline-secondary ml-sm-3 p-3 border"> Registrarse</a>
+                </div>
+
+                <!--HISTORIAL & FAVORITOS -->
+                <div class="col-lg-4 order-lg-3 col-sm-6 d-flex justify-content-center justify-content-lg-start mt-2 flex-wrap flex-sm-nowrap mt-lg-0">
+                    <button type="button" class= "c-1 text-center w-100 mr-sm-2 d-block-border-0 rounded" id="fav">
+                            <p class="mb-0 ">Favoritos</p>                          
+                    </button>
+                    <button type="button" class= "c-1 text-center w-100 border-0 rounded" id="historial">
+                            <p class="mb-0 ">Historial</p>
+                    </button>
+                </div>              
+            </div>
+</footer>
+            
+    
+</footer>
+
+
+</body>
+
+</html>

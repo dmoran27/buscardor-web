@@ -1,0 +1,156 @@
+
+{{ if (eq .Favoritos "si")}}
+
+<table class="table table-striped bg-light shadow">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Busqueda</th>
+            <th scope="col">Link</th>
+            <th scope="col">Favoritos</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{range $index, $element := .Fav.Link}} 
+          <tr>
+            <th scope="row">{{$index}}</th>
+            <td>{{.Theme}}</td>
+            <td ><a href={{.Link}} class="d-block" style="max-width: 40em; overflow: hidden;">{{.Link}}</a></td>
+            <td><a href="#" class="btn card-link favoritos" >
+                    <i class=" icon icon-star-filled"   id={{.Link}}></i>
+            </a></td>
+          </tr>
+          {{end}}
+        </tbody>
+</table>
+{{ end }}
+
+
+
+<div id="acordeon">
+    <!--url1-->
+            <div class="card px-0 ">
+                <div class="card-header" id="Heading1">
+                    <a href="#">
+                        <h3 class="card-title card-link title ">Titulo de pagina </h3>
+                    </a> -->
+                    <p class="card-subtitle text-muted mb-2 url"> www.url.com</p>
+                    <p class="card-text description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, odit.</p>
+                    <div class="link d-flex justify-content-end">
+                        <a href="#p1" data-toggle="collapse" aria-expanded="true"
+                            aria-controls="p1" class="card-link btn"><i class="icon icon-list-bullet"></i></a>
+                        <a href="#" class="btn card-link favoritos" >
+                            <i class=" icon icon-star"  id="url1"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="collapse" aria-labelledby="Heading1" id="p1"data-parent="#acordeon">
+                    <div class="card p-2 ">
+                            <h5 class="card-text text-info">Titulo de la pagina: </h5>  <p class="card-text text-muted"> titulo</p>           
+                    </div>
+                </div>
+            </div>
+            
+<!--url2-->
+            <div class="card px-0 ">
+                <div class="card-header" id="Heading2">
+                    <a href="#">
+                        <h3 class="card-title card-link title ">Titulo de pagina </h3>
+                    </a> -->
+                    <p class="card-subtitle text-muted mb-2 url"> www.url.com</p>
+                    <p class="card-text description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, odit.</p>
+                    <div class="link d-flex justify-content-end">
+                        <a href="#p2" data-toggle="collapse" aria-expanded="true"
+                            aria-controls="p2" class="card-link btn"><i class="icon icon-list-bullet"></i></a>
+                        <a href="#" class="btn card-link favoritos" >
+                            <i class=" icon icon-star"  id="ur2"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="collapse" aria-labelledby="Heading2" id="p2"data-parent="#acordeon">
+                    <div class="card p-2 ">
+                            <h5 class="card-text text-info">Titulo de la pagina: </h5>  <p class="card-text text-muted"> titulo</p>           
+                    </div>
+                </div>
+            </div>
+<!--url3-->
+            <div class="card px-0 ">
+                <div class="card-header" id="Heading3">
+                    <a href="#">
+                        <h3 class="card-title card-link title ">Titulo de pagina </h3>
+                    </a> -->
+                    <p class="card-subtitle text-muted mb-2 url"> www.url.com</p>
+                    <p class="card-text description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, odit.</p>
+                    <div class="link d-flex justify-content-end">
+                        <a href="#p3" data-toggle="collapse" aria-expanded="true"
+                            aria-controls="p3" class="card-link btn"><i class="icon icon-list-bullet"></i></a>
+                        <a href="#" class="btn card-link favoritos" >
+                            <i class=" icon icon-star"  id="url3"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="collapse" aria-labelledby="Heading3" id="p3" data-parent="#acordeon">
+                    <div class="card p-2 ">
+                            <h5 class="card-text text-info">Titulo de la pagina: </h5>  <p class="card-text text-muted"> titulo</p>           
+                    </div>
+                </div>
+            </div>
+<!--url4-->
+            <div class="card px-0 ">
+                <div class="card-header" id="Heading4">
+                    <a href="#">
+                        <h3 class="card-title card-link title ">Titulo de pagina </h3>
+                    </a> -->
+                    <p class="card-subtitle text-muted mb-2 url"> www.url.com</p>
+                    <p class="card-text description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, odit.</p>
+                    <div class="link d-flex justify-content-end">
+                        <a href="#p4" data-toggle="collapse" aria-expanded="true"
+                            aria-controls="p4" class="card-link btn"><i class="icon icon-list-bullet"></i></a>
+                        <a href="#" class="btn card-link favoritos" >
+                            <i class=" icon icon-star"  id="url4"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="collapse" aria-labelledby="Heading4" id="p4" data-parent="#acordeon">
+                    <div class="card p-2 ">
+                            <h5 class="card-text text-info">Titulo de la pagina: </h5>  <p class="card-text text-muted"> titulo</p>           
+                    </div>
+                </div>
+            </div>
+<!--url5-->
+            <div class="card px-0 ">
+                <div class="card-header" id="Heading5">
+                    <a href="#">
+                        <h3 class="card-title card-link title ">Titulo de pagina </h3>
+                    </a> -->
+                    <p class="card-subtitle text-muted mb-2 url"> www.url.com</p>
+                    <p class="card-text description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, odit.</p>
+                    <div class="link d-flex justify-content-end">
+                        <a href="#p5" data-toggle="collapse" aria-expanded="true"
+                            aria-controls="p5" class="card-link btn"><i class="icon icon-list-bullet"></i></a>
+                        <a href="#" class="btn card-link favoritos" >
+                            <i class=" icon icon-star"  id="url5"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="collapse" aria-labelledby="Heading5" id="p5" data-parent="#acordeon">
+                    <div class="card p-2 ">
+                            <h5 class="card-text text-info">Titulo de la pagina: </h5>  <p class="card-text text-muted"> titulo</p>           
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+</div>
+        
+        
